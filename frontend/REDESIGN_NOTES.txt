@@ -1,0 +1,9 @@
+KISAN MITRA FRONTEND REDESIGN
+
+- Removed Three.js script loading and 3D visual effects from all HTML pages.
+- Replaced the animated theme with a clean, responsive, light agricultural UI.
+- Disabled CSS animations, transitions, smooth scrolling and motion effects globally.
+- Kept existing page markup, API calls, authentication scripts, chat scripts and feature JavaScript.
+- No backend or database files are included in this frontend-only package.
+
+Use this frontend folder in your existing Kisan Mitra project, replacing the old frontend folder.

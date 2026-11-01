@@ -1,0 +1,19 @@
+fastapi
+uvicorn[standard]
+python-multipart
+mysql-connector-python
+reportlab
+requests
+PyJWT
+pwdlib[argon2]
+pydantic[email]
+python-dotenv
+Pillow
+
+APScheduler>=3.10,<4
+
+# Improves shaping of Indic and Arabic scripts in multilingual PDF reports.
+uharfbuzz>=0.40.0
+
+# OpenAI-compatible client configured for the Groq API.
+openai>=1.68.0

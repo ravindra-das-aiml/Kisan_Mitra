@@ -1,0 +1,27 @@
+<header class="header">
+  <a class="logo" href="index.html" aria-label="KisanMitra home">🌾 Kisan<span>Mitra</span></a>
+  <nav class="km-primary-nav" aria-label="Main navigation">
+    <a href="index.html" data-i18n="dashboard" data-roles="farmer,admin">Dashboard</a>
+    <div class="km-agri-nav-group" role="group" aria-label="Farming tools">
+      <a class="km-nav-farm" href="farm-tools.html" data-i18n="farmTools" data-roles="farmer,admin">Farm Assistant</a>
+      <a class="km-nav-mandi" href="analytics.html" data-roles="farmer,buyer,admin">Mandi Analytics</a>
+      <a class="km-nav-marketplace" href="marketplace.html" data-roles="farmer,buyer,admin">Buyer &amp; Seller Portal</a>
+    </div>
+    <a href="reports.html" data-i18n="reports" data-roles="farmer,admin">My Report</a>
+    <label class="language-control">
+      <span data-i18n="language">Language</span>
+      <select id="languageSelect" aria-label="Choose language">
+        <option value="en">English</option><option value="hi">हिन्दी</option><option value="pa">ਪੰਜਾਬੀ</option>
+        <option value="ha">हरियाणवी</option><option value="gu">ગુજરાતી</option><option value="mr">मराठी</option>
+        <option value="bn">বাংলা</option><option value="ur">اردو</option><option value="ta">தமிழ்</option>
+        <option value="te">తెలుగు</option><option value="kn">ಕನ್ನಡ</option><option value="ml">മലയാളം</option>
+        <option value="or">ଓଡ଼ିଆ</option><option value="as">অসমীয়া</option>
+      </select>
+    </label>
+    <button id="themeBtn" class="nav-btn km-mode-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false" title="Switch colour theme">
+      <span class="km-mode-icon" aria-hidden="true">☼</span><span class="km-mode-label">Dark/Light Mode</span>
+    </button>
+    <button id="logoutBtn" class="nav-btn" type="button" data-i18n="logout">Logout</button>
+    <a href="admin.html" data-roles="admin">Admin</a>
+  </nav>
+</header>

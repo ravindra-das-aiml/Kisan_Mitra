@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Crop Doctor — KisanMitra</title><link rel="stylesheet" href="css/style.css"></head><body><div id="header"></div><main><section class="section km-dashboard-overview" aria-labelledby="dashboard-title">
+  <div class="km-dashboard-overview-copy">
+    <p class="eyebrow">FARMER DASHBOARD</p>
+    <h1 id="dashboard-title">Crop Doctor</h1>
+    <p class="muted">Check local weather, explore mandi prices, scan crop health and review your latest farming reports from one place.</p>
+    <nav class="km-dashboard-shortcuts" aria-label="Quick access to farming tools">
+      <a class="km-dashboard-shortcut km-shortcut-farm" href="farm-tools.html"><span aria-hidden="true">🌱</span>Farm Assistant</a>
+      <a class="km-dashboard-shortcut km-shortcut-mandi" href="analytics.html"><span aria-hidden="true">📈</span>Mandi Analytics</a>
+      <a class="km-dashboard-shortcut km-shortcut-market" href="marketplace.html"><span aria-hidden="true">🤝</span>Buyer &amp; Seller Portal</a>
+    </nav>
+  </div>
+</section><section class="section dashboard-grid"><article class="card weather-card"><div class="section-heading"><div><p class="eyebrow">LOCAL CONDITIONS</p><h2>Weather near you</h2></div><button class="btn outline" id="refreshWeather">Refresh</button></div><p id="locationStatus" class="muted">Requesting location permission…</p><div id="weatherData" class="weather-data"><p>Allow location access to load local weather automatically.</p></div><p id="weatherError" class="error"></p></article>
+<article class="card">
+    <p class="eyebrow">MARKET WATCH</p>
+    <h2>Mandi Prices</h2>
+
+    <p class="muted">
+        Select your state, district and commodity to check mandi prices.
+    </p>
+
+    <div class="filter-row">
+        <select id="stateFilter">
+            <option value="">Select State</option>
+        </select>
+
+        <select id="districtFilter" disabled>
+            <option value="">Select District</option>
+        </select>
+
+        <select id="commodityFilter">
+            <option value="">Select Commodity</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Rice">Rice</option>
+            <option value="Potato">Potato</option>
+            <option value="Tomato">Tomato</option>
+            <option value="Onion">Onion</option>
+            <option value="Maize">Maize</option>
+            <option value="Cotton">Cotton</option>
+        </select>
+
+        <button class="btn" id="loadMandi" type="button">
+            Load prices
+        </button>
+    </div>
+
+    <p id="mandiStatus" class="muted">
+        Select state, district and commodity.
+    </p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Commodity</th>
+                    <th>Market</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                    <th>Modal</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody id="mandiRows">
+                <tr>
+                    <td colspan="6">
+                        Select location and commodity, then click Load prices.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p id="mandiNote" class="muted"></p>
+    <p id="mandiError" class="error"></p>
+</article>
+</section><section class="doctor-layout"><div class="card"><h2>Analyze a plant image</h2><p class="muted">JPG, PNG or WebP · up to 8 MB</p><div class="upload-area"><input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp" hidden><div id="uploadPlaceholder"><div class="upload-icon">📷</div><h3>Choose crop image</h3><p>Use a clear photo of the affected plant or leaf.</p><button class="btn" id="chooseBtn" type="button">Choose Image</button></div><img id="previewImage" alt="Plant image preview"></div><button class="btn full" id="analyzeBtn" disabled>Analyze with Groq</button><p id="error" class="error"></p></div><div class="card"><div class="result-header"><div><p class="eyebrow">AI-ASSISTED ASSESSMENT</p><h2>Diagnosis</h2></div><span id="status" class="status">Waiting</span></div><div id="resultEmpty" class="empty-state">Upload a plant image and run analysis.</div><div id="result" class="result hidden"><div class="result-row"><span>Crop</span><strong id="crop"></strong></div><div class="result-row"><span>Possible condition</span><strong id="disease"></strong></div><div class="result-row"><span>AI assessment score</span><strong id="confidence"></strong></div><div class="result-row"><span>Severity</span><strong id="severity"></strong></div><h3>Visible symptoms</h3><ul id="symptoms"></ul><div class="advice"><b>Suggested treatment / care</b><ul id="treatment"></ul></div><h3>Prevention</h3><ul id="prevention"></ul><p id="warning" class="muted"></p><a id="pdfLink" class="btn" target="_blank" rel="noopener">Download PDF report</a></div><p class="disclaimer">AI results can be wrong and are not a laboratory diagnosis. Confirm serious crop problems with a local agricultural expert.</p></div></section><section class="section"><div class="section-heading"><h2>My Recent Reports</h2><a href="reports.html" class="btn outline">View All</a></div><div id="recentReports" class="report-grid"></div></section></main><div id="footer"></div><script src="js/i18n.js"></script><script src="js/components.js"></script><script src="js/weather.js"></script><script src="js/mandi-fallback.js"></script><script src="js/mandi-data.js" onerror="void 0"></script><script src="js/mandi.js"></script><script src="js/crop-doctor.js"></script><script src="js/reports.js"></script>
+<script src="js/ui.js"></script></body></html>

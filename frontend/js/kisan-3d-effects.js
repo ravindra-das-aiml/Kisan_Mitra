@@ -1,0 +1,1 @@
+/* Visual effects intentionally disabled. Kisan Mitra uses a static interface. */

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smart Farming Assistant — KisanMitra</title><link rel="stylesheet" href="css/style.css"></head>
+<body><div id="header"></div>
+<main class="section farm-tools">
+  <section class="farm-tools-intro km-farm-assistant-hero" aria-labelledby="km-farm-brand-title">
+    <div class="km-farm-hero-copy">
+      <p class="eyebrow">YOUR INTELLIGENT FARMING COMPANION</p>
+      <h1 id="km-farm-brand-title" class="km-farm-brand-title">
+        <span class="km-farm-brand-kicker">AI CROP INTELLIGENCE</span>
+        <span class="km-farm-brand-name">Kisan<span>Mitra</span></span>
+      </h1>
+      <h2 class="km-farm-assistant-heading" data-i18n="farmTitle">SMART FARMING ASSISTANT</h2>
+      <p class="muted km-farm-assistant-description">Your field-side digital companion for crop care, smarter planning and confident farming decisions.</p>
+      <div class="km-floating-taglines" aria-label="KisanMitra Farm Assistant benefits">
+        <span>Ask in Your Language</span>
+        <span>Understand Crop Health</span>
+        <span>Plan Every Farm Activity</span>
+        <span>Get Local Weather Insights</span>
+        <span>Explore Mandi Prices</span>
+        <span>Grow Smarter Every Day</span>
+      </div>
+      <p class="km-farm-assistant-note" data-i18n="farmIntro">Ask crop questions, plan farm activities, and choose email alerts.</p>
+    </div>
+  </section>
+  <div class="farm-tools-grid">
+    <section class="card chat-card">
+      <h2 data-i18n="chatTitle">AI Crop Assistant</h2><p class="muted" data-i18n="chatHint">Ask about crop care, symptoms, irrigation, or safe farm practices.</p>
+      <div id="chatMessages" class="chat-messages" aria-live="polite"><div class="chat-bubble assistant" data-i18n="assistantWelcome">Hello! Ask me a crop or farming question.</div></div>
+      <form id="chatForm" class="chat-form"><textarea id="chatInput" rows="3" maxlength="3000" data-i18n-placeholder="messagePlaceholder" placeholder="Type your farming question…" required></textarea><button class="btn" type="submit" data-i18n="send">Send</button></form>
+      <p id="chatStatus" class="muted" role="status"></p>
+      <label class="field-label" for="chatCrop">Crop (optional)</label><input id="chatCrop" class="field" maxlength="100" placeholder="e.g. wheat, rice, cotton">
+    </section>
+    <section class="card">
+      <h2 data-i18n="calendarTitle">Farm Calendar</h2><p class="muted" data-i18n="calendarHint">Add farm activities and reminders.</p>
+      <form id="calendarForm" class="stack-form">
+        <label><span data-i18n="eventTitle">Activity title</span><input id="eventTitle" class="field" maxlength="160" required></label>
+        <label><span data-i18n="eventDescription">Notes (optional)</span><textarea id="eventDescription" class="field" rows="2"></textarea></label>
+        <label><span data-i18n="eventType">Activity type</span><select id="eventType" class="field"><option value="sowing" data-i18n="sowing">Sowing</option><option value="irrigation" data-i18n="irrigation">Irrigation</option><option value="fertilizer" data-i18n="fertilizer">Fertilizer</option><option value="spraying" data-i18n="spraying">Spraying</option><option value="harvest" data-i18n="harvest">Harvest</option><option value="inspection" data-i18n="inspection">Crop inspection</option><option value="other" data-i18n="other">Other</option></select></label>
+        <label><span data-i18n="eventDate">Date</span><input id="eventDate" type="date" class="field" required></label>
+        <label><span data-i18n="remindBefore">Remind me days before</span><select id="reminderDays" class="field"><option value="0">0</option><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option><option value="7">7</option></select></label>
+        <button class="btn" type="submit" data-i18n="addEvent">Add activity</button><p id="calendarStatus" class="muted" role="status"></p>
+      </form>
+      <div id="calendarEvents" class="calendar-events"><p data-i18n="loading">Loading…</p></div>
+    </section>
+    <section class="card notification-card">
+      <h2>Email &amp; Alert Preferences</h2>
+      <p class="muted">Choose whether to receive farm reminders and weather-risk alerts by email.</p>
+      <form id="preferencesForm" class="stack-form">
+        <label><span data-i18n="language">Language</span><select id="prefLanguage" class="field">
+          <option value="en">English</option><option value="hi">हिन्दी</option><option value="pa">ਪੰਜਾਬੀ</option><option value="ha">हरियाणवी</option><option value="gu">ગુજરાતી</option><option value="mr">मराठी</option><option value="bn">বাংলা</option><option value="ur">اردو</option><option value="ta">தமிழ்</option><option value="te">తెలుగు</option><option value="kn">ಕನ್ನಡ</option><option value="ml">മലയാളം</option><option value="or">ଓଡ଼ିଆ</option><option value="as">অসমীয়া</option>
+        </select></label>
+        <div class="channel-row"><label class="check-label"><input id="emailEnabled" type="checkbox"><span data-i18n="email">Email</span></label><input id="emailAddress" class="field" type="email" data-i18n-placeholder="emailAddress" placeholder="Email address"></div>
+        <label class="check-label"><input id="weatherAlerts" type="checkbox" checked><span data-i18n="weatherAlerts">Weather-risk alerts</span></label>
+        <label class="check-label"><input id="cropReminders" type="checkbox" checked><span data-i18n="cropReminders">Farm calendar reminders</span></label>
+        <label class="check-label consent-check"><input id="notificationConsent" type="checkbox"><span>I agree to receive the email alerts I enable. I can turn them off later.</span></label>
+        <button id="savePreferences" class="btn" type="submit" data-i18n="save">Save preferences</button>
+        <button id="setWeatherLocation" class="btn outline" type="button" data-i18n="weatherLocation">Use current location for weather alerts</button>
+        <button id="testNotifications" class="btn outline" type="button">Send test email</button>
+        <p id="preferencesStatus" class="muted" role="status"></p><pre id="testResults" class="test-results hidden"></pre>
+      </form>
+      <p class="disclaimer">Email delivery requires SMTP settings in the backend environment. Weather alerts are forecast-based and may not capture local microclimates.</p>
+    </section>
+  </div>
+</main><div id="footer"></div>
+<script src="js/i18n.js"></script><script src="js/components.js"></script><script src="js/farm-tools.js"></script>
+<script src="js/ui.js"></script></body></html>

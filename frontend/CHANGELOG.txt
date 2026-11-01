@@ -1,0 +1,64 @@
+KISAN MITRA — 3D PORTFOLIO STYLE UPDATE
+======================================
+
+Visual additions
+----------------
+- New dark-first visual system with an optional light theme.
+- Strong gradient headline treatment and refined page spacing.
+- Floating glass navigation and translucent dashboard surfaces.
+- Procedural 3D plant, glowing orbit rings and ambient particles.
+- Scroll reveal and subtle pointer-based card tilt.
+- Crop-image scanning animation.
+- Responsive navigation, cards, forms and tables.
+- Reduced-motion handling and visual fallback if WebGL is unavailable.
+
+Functional compatibility corrections
+-------------------------------------
+- Set first-visit theme to dark while retaining persisted theme switching.
+- Changed the crop-doctor initial login check to call getCropToken(), the
+  helper actually declared in that module. This removes an unnecessary
+  dependency on a getToken() global from another script.
+- Retained current API hosts, routes, payloads, authentication token key,
+  translation data and existing page element IDs.
+
+Not changed
+-----------
+- No FastAPI backend, database, endpoint or environment configuration.
+- No user-specific data or secrets.
+- The original css/style.css is included unchanged.
+
+
+KISANMITRA NAVIGATION & DASHBOARD REFINEMENT
+============================================
+- Removed the sound control and disabled synthesized interface tones.
+- Reordered the shared navigation: Dashboard, Farm Assistant, Mandi Analytics,
+  Marketplace, My Report, Language, Dark/Light Mode, Logout (Admin remains
+  available to admin users only).
+- Kept the primary navigation on a single horizontal row; narrower screens use
+  a horizontal scroll rail instead of wrapping or clipping tab labels.
+- Updated the Dashboard headline to AI Crop Intelligence / KisanMitra.
+- Added animated floating feature taglines to Dashboard and Farm Assistant.
+- Updated the animated plant badge branding and added a shine sweep to clicked
+  navigation tabs.
+- Added text wrapping and minimum-width safeguards so content remains inside
+  dashboard cards and other glass panels.
+
+
+FARM ASSISTANT BRAND-HERO MOVE
+==============================
+- The Dashboard now opens with a task-focused "Your Farm at a Glance" overview.
+- The AI Crop Intelligence / KisanMitra animated brand lockup and floating taglines now live in Farm Assistant alongside the 3D plant.
+- Farm Assistant, Mandi Analytics and Buyer & Seller Portal are visually grouped in the primary navigation; all three show an animated shine on click and active-page state.
+- Removed duplicate Mandi / Marketplace shortcut buttons from the Dashboard body.
+
+
+CROP DOCTOR & DASHBOARD SHORTCUTS
+=================================
+- Changed the Dashboard headline from “Your Farm at a Glance” to “Crop Doctor”.
+- Added three direct Dashboard shortcuts: Farm Assistant, Mandi Analytics and Buyer & Seller Portal.
+- Changed the Farm Assistant page title to “SMART FARMING ASSISTANT” with translated equivalents.
+- Retained working shared-navigation links to all three destination pages and clarified their group semantics for assistive technology.
+- Added responsive, keyboard-focusable shortcut styling for both dark and light themes.
+
+--- Motion-free, responsive rewrite ---
+Removed all animation and the 3D layer; rewrote css/style.css; added js/ui.js.
